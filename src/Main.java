@@ -27,15 +27,9 @@ public class Main {
             case "2":
                 int s = scanner.nextInt();
                 try {
-                    if (s>bankAccount.getAmount()){
-                        bankAccount.withDraw(bankAccount.getAmount());
-                      throw new LimitException();
-
-                    }else {
-                        bankAccount.withDraw(s);
-                    }
+                    bankAccount.withDraw(s);
                 } catch (LimitException e) {
-                    System.out.println("вы сняли остаток денги");
+                    throw new RuntimeException(e);
                 }
                 comands();
                 break;

@@ -3,6 +3,4 @@ public class LimitException extends Exception {
         super(message);
     }
 
-    public LimitException() {
-    }
 }
